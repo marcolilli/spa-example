@@ -1,5 +1,8 @@
 import Profile from "./Profile.tsx";
 import Counter from "./Counter.tsx";
+import {CounterController} from "./CounterController.tsx";
+import ToggleBox from "./ToogleBox.tsx";
+import WindowWidth from "./WindowWidth.tsx";
 
 type Profiles = Array<{
     name: string;
@@ -30,8 +33,6 @@ const profiles: Profiles = [
 ]
 
 export default function App() {
-
-
     return (
         <div className={"page-content"}>
             <div className={"card-grid"}>
@@ -51,7 +52,23 @@ export default function App() {
                 })}
             </div>
 
+            <hr/>
+
             <Counter/>
+
+            <hr/>
+
+            <CounterController/>
+
+            <hr/>
+
+            {[1, 2, 3, 4, 5].map((_, index) =>
+                <ToggleBox key={index}/>
+            )}
+
+            <hr/>
+
+            <WindowWidth/>
         </div>
     );
 }
