@@ -7,8 +7,8 @@ interface ProfileProps {
 }
 
 const Profile: FC<ProfileProps> = ({name, age, imageUrl}) => {
-    if (name === "marco") {
-        return null;
+    const handleClick = () => {
+        alert(`You clicked on the profile of ${name}!`);
     }
 
     return (
@@ -16,6 +16,8 @@ const Profile: FC<ProfileProps> = ({name, age, imageUrl}) => {
             <img src={imageUrl} alt="Profile"/>
             <h3>{name}</h3>
             <p>Age: {age}</p>
+            {age < 18 && <p>Underage</p>}
+            <button onClick={handleClick}>Click me</button>
         </div>
     )
 }
