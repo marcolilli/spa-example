@@ -16,11 +16,11 @@ function createPath(name: string) {
 function App() {
     const pages = [
         {
-            name: 'Page 1',
+            name: 'Page A',
             component: <Page1/>
         },
         {
-            name: 'Page 2',
+            name: 'Page B',
             component: <Page2/>
         }
     ]
