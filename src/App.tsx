@@ -24,6 +24,7 @@ function App() {
             component: <Page2/>
         }
     ]
+    
 
 
     return (
