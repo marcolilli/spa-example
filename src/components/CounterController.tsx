@@ -4,7 +4,7 @@ import {useState} from "react";
 export function CounterController(){
     const [count, setCount] = useState(0);
 
-    const increment = () => {
+    function increment() {
         setCount(count + 1);
     }
 

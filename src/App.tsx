@@ -1,8 +1,10 @@
-import Profile from "./Profile.tsx";
-import Counter from "./Counter.tsx";
-import {CounterController} from "./CounterController.tsx";
-import ToggleBox from "./ToogleBox.tsx";
-import WindowWidth from "./WindowWidth.tsx";
+import Profile from "./components/Profile/Profile.tsx";
+import {Route, Switch} from "wouter";
+import AboutPage from "./pages/AboutPage.tsx";
+import StartPage from "./pages/StartPage.tsx";
+import {Fragment} from "react";
+import Navigation from "./components/Navigation/Navigation.tsx";
+import {Button} from "./components/Button.tsx";
 
 type Profiles = Array<{
     name: string;
@@ -34,41 +36,69 @@ const profiles: Profiles = [
 
 export default function App() {
     return (
-        <div className={"page-content"}>
-            <div className={"card-grid"}>
-                {profiles.map((p, index) => {
-                    return (
-                        <div
-                            onMouseEnter={() => {
-                                console.log("Mouse entered a profile")
-                            }}
-                            onMouseLeave={() => {
-                                console.log("Mouse left a profile")
-                            }}
-                            key={index}>
-                            <Profile name={p.name} age={p.age} imageUrl={p.imageUrl} key={index}/>
-                        </div>
-                    )
-                })}
-            </div>
+        <Fragment>
+            <Navigation/>
 
-            <hr/>
+            <Button label={"Click here"} large/>
 
-            <Counter/>
+            <Switch>
+                <Route path={"/"} component={StartPage}/>
+                <Route path={"/about"} component={AboutPage}/>
+                <Route path={"/profile/:name"}>
+                    {(params) => {
+                        const matchedProfile = profiles.find((p) => p.name === params.name);
 
-            <hr/>
+                        if (matchedProfile === undefined) {
+                            return <h1>Profile not found</h1>
+                        }
 
-            <CounterController/>
+                        return (
+                            <Profile name={matchedProfile.name}
+                                     age={matchedProfile.age}
+                                     imageUrl={matchedProfile.imageUrl}
+                            />
+                        )
+                    }}
+                </Route>
 
-            <hr/>
+                <Route>404: Path not found!</Route>
+            </Switch>
+        </Fragment>
+        /* <div className={"page-content"}>
+             <div className={"card-grid"}>
+                 {profiles.map((p, index) => {
+                     return (
+                         <div
+                             onMouseEnter={() => {
+                                 console.log("Mouse entered a profile")
+                             }}
+                             onMouseLeave={() => {
+                                 console.log("Mouse left a profile")
+                             }}
+                             key={index}>
+                             <Profile name={p.name} age={p.age} imageUrl={p.imageUrl} key={index}/>
+                         </div>
+                     )
+                 })}
+             </div>
 
-            {[1, 2, 3, 4, 5].map((_, index) =>
-                <ToggleBox key={index}/>
-            )}
+             <hr/>
 
-            <hr/>
+             <Counter/>
 
-            <WindowWidth/>
-        </div>
+             <hr/>
+
+             <CounterController/>
+
+             <hr/>
+
+             {[1, 2, 3, 4, 5].map((_, index) =>
+                 <ToggleBox key={index}/>
+             )}
+
+             <hr/>
+
+             <WindowWidth/>
+         </div>*/
     );
 }

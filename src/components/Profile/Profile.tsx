@@ -1,4 +1,6 @@
 import type {FC} from "react";
+import styles from "./Profile.module.css";
+import cn from "classnames";
 
 interface ProfileProps {
     name: string;
@@ -12,7 +14,7 @@ const Profile: FC<ProfileProps> = ({name, age, imageUrl}) => {
     }
 
     return (
-        <div className={"card"}>
+        <div className={cn(styles.card, name === "Mary" && styles.specialCard)}>
             <img src={imageUrl} alt="Profile"/>
             <h3>{name}</h3>
             <p>Age: {age}</p>
