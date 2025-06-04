@@ -5,6 +5,7 @@ import StartPage from "./pages/StartPage.tsx";
 import {Fragment} from "react";
 import Navigation from "./components/Navigation/Navigation.tsx";
 import {Button} from "./components/Button.tsx";
+import ModalExamplePage from "./pages/ModalExamplePage.tsx";
 
 type Profiles = Array<{
     name: string;
@@ -60,6 +61,7 @@ export default function App() {
                         )
                     }}
                 </Route>
+                <Route path={"/modal-example"} component={ModalExamplePage}/>
 
                 <Route>404: Path not found!</Route>
             </Switch>
