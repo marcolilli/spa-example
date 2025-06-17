@@ -1,10 +1,11 @@
 import {Link, useLocation} from "wouter";
+import styles from "./Navigation.module.css";
 
 export default function Navigation() {
     const [location] = useLocation();
 
     return (
-        <nav>
+        <nav className={styles.header}>
             <ul>
                 <li className={location === "/" ? "active" : ""}>
                     <Link href={"/"}>Start Page</Link>
@@ -14,6 +15,15 @@ export default function Navigation() {
                 </li>
                 <li className={location === "/modal-example" ? "active" : ""}>
                     <Link href={"/modal-example"}>Modal Example Page</Link>
+                </li>
+                <li className={location === "/background-image" ? "active" : ""}>
+                    <Link href={"/background-image"}>Background Image Page</Link>
+                </li>
+                <li className={location === "/weather" ? "active" : ""}>
+                    <Link href={"/weather"}>Weather Page</Link>
+                </li>
+                <li className={location === "/map" ? "active" : ""}>
+                    <Link href={"/map"}>Map Page</Link>
                 </li>
             </ul>
         </nav>

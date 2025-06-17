@@ -1,4 +1,4 @@
-import Card from "../components/Card.tsx";
+import Card from "../components/Card/Card.tsx";
 import {Button} from "../components/Button.tsx";
 
 export default function StartPage(){

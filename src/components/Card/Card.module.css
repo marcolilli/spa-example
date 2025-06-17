@@ -1,0 +1,15 @@
+.card {
+    border-radius: 1rem;
+    background-color: white;
+    margin: 4rem;
+    box-shadow: 0 0 1rem 0.2rem rgba(0, 0, 0, 0.34);
+    overflow: hidden;
+}
+
+.card.padding {
+    padding: 2rem;
+}
+
+.card.skeleton {
+    background-color: #aaaaaa;
+}

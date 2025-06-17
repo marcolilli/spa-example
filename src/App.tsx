@@ -4,8 +4,10 @@ import AboutPage from "./pages/AboutPage.tsx";
 import StartPage from "./pages/StartPage.tsx";
 import {Fragment} from "react";
 import Navigation from "./components/Navigation/Navigation.tsx";
-import {Button} from "./components/Button.tsx";
 import ModalExamplePage from "./pages/ModalExamplePage.tsx";
+import BackgroundImagePage from "./pages/BackgroundImagePage.tsx";
+import WeatherPage from "./pages/WeatherPage.tsx";
+import MapPage from "./pages/MapPage.tsx";
 
 type Profiles = Array<{
     name: string;
@@ -40,8 +42,6 @@ export default function App() {
         <Fragment>
             <Navigation/>
 
-            <Button label={"Click here"} large/>
-
             <Switch>
                 <Route path={"/"} component={StartPage}/>
                 <Route path={"/about"} component={AboutPage}/>
@@ -62,6 +62,9 @@ export default function App() {
                     }}
                 </Route>
                 <Route path={"/modal-example"} component={ModalExamplePage}/>
+                <Route path={"/background-image"} component={BackgroundImagePage}/>
+                <Route path={"/weather"} component={WeatherPage}/>
+                <Route path={"/map"} component={MapPage}/>
 
                 <Route>404: Path not found!</Route>
             </Switch>
