@@ -8,6 +8,7 @@ import ModalExamplePage from "./pages/ModalExamplePage.tsx";
 import BackgroundImagePage from "./pages/BackgroundImagePage.tsx";
 import WeatherPage from "./pages/WeatherPage.tsx";
 import MapPage from "./pages/MapPage.tsx";
+import QRCodePage from "./pages/QRCodePage.tsx";
 
 type Profiles = Array<{
     name: string;
@@ -65,6 +66,7 @@ export default function App() {
                 <Route path={"/background-image"} component={BackgroundImagePage}/>
                 <Route path={"/weather"} component={WeatherPage}/>
                 <Route path={"/map"} component={MapPage}/>
+                <Route path={"/qr-code"} component={QRCodePage}/>
 
                 <Route>404: Path not found!</Route>
             </Switch>

@@ -8,19 +8,19 @@ export default function StartPage(){
             <p>hello this is the start page</p>
 
 
-            <Card>
+            <Card padding>
                 <h1>Card</h1>
                 <p>THis is a paragraph</p>
                 <Button label={"my Button"}/>
             </Card>
 
 
-            <Card>
+            <Card padding>
                <img src={"https://placehold.co/200x400/jpg"}/>
             </Card>
 
-            <Card>
-                <Card>
+            <Card padding>
+                <Card padding>
                     <h3>child child</h3>
                 </Card>
             </Card>

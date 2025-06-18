@@ -25,6 +25,9 @@ export default function Navigation() {
                 <li className={location === "/map" ? "active" : ""}>
                     <Link href={"/map"}>Map Page</Link>
                 </li>
+                <li className={location === "/qr-code" ? "active" : ""}>
+                    <Link href={"/qr-code"}>QR Code Page</Link>
+                </li>
             </ul>
         </nav>
     )
