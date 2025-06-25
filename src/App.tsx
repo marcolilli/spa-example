@@ -9,6 +9,7 @@ import BackgroundImagePage from "./pages/BackgroundImagePage.tsx";
 import WeatherPage from "./pages/WeatherPage.tsx";
 import MapPage from "./pages/MapPage.tsx";
 import QRCodePage from "./pages/QRCodePage.tsx";
+import CameraPage from "./pages/CameraPage.tsx";
 
 type Profiles = Array<{
     name: string;
@@ -67,6 +68,7 @@ export default function App() {
                 <Route path={"/weather"} component={WeatherPage}/>
                 <Route path={"/map"} component={MapPage}/>
                 <Route path={"/qr-code"} component={QRCodePage}/>
+                <Route path={"/camera"} component={CameraPage}/>
 
                 <Route>404: Path not found!</Route>
             </Switch>

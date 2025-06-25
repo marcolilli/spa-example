@@ -28,6 +28,9 @@ export default function Navigation() {
                 <li className={location === "/qr-code" ? "active" : ""}>
                     <Link href={"/qr-code"}>QR Code Page</Link>
                 </li>
+                <li className={location === "/camera" ? "active" : ""}>
+                    <Link href={"/camera"}>Camera Page</Link>
+                </li>
             </ul>
         </nav>
     )
